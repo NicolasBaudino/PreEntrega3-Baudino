@@ -117,6 +117,10 @@ footer {
 footer .redesMargen {
   margin: 5px;
 }
+footer a:hover .redesTransicion {
+  transition: all 0.2s ease-in-out;
+  transform: scale(1.5);
+}
 
 @media (min-width: 320px) and (max-width: 444px) {
   .centradoTextos h1 {
