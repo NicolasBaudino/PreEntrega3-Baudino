@@ -35,18 +35,22 @@ header {
   top: 0px;
   font-family: "NeueHaasDisplayBold";
 }
-header #navbarNav {
+header nav #navbarNav {
   justify-content: center;
 }
-header .colornavbar {
+header nav .colornavbar {
   background-color: black;
 }
-header ul {
+header nav ul {
   list-style-type: none; /*le saca todos los estilos por defecto y lo deja plano*/
 }
-header a {
+header nav a {
   text-decoration: none; /*para sacar el subrayado del enlace*/
   color: white;
+}
+header nav li:hover .navbarTransicion {
+  transition: all 0.2s ease-in-out;
+  transform: scale(1.1);
 }
 
 main h1 {

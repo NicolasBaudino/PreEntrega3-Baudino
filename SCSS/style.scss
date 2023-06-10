@@ -27,6 +27,11 @@
   justify-content: center;
   align-items: center;
 }
+//MIXIN TRANSICIONES NAVBAR / REDES
+@mixin transicionScale ($valorScale) {
+  transition: all 0.2s ease-in-out;
+  transform: scale($valorScale);
+}
 
 // BODY
 body{
@@ -46,21 +51,31 @@ header {
   font-family: "NeueHaasDisplayBold";
   
   //NAVEGACIÓN
-  #navbarNav {
+  nav {
+    #navbarNav {
       justify-content: center;
-  }
-  .colornavbar {
-      background-color: black;
+    }
+    .colornavbar {
+        background-color: black;
+    }
+  
+    ul {
+        list-style-type: none; /*le saca todos los estilos por defecto y lo deja plano*/ 
+    }
+
+    a {
+        text-decoration: none; /*para sacar el subrayado del enlace*/
+        color: white;
+    }
+    
+    li:hover{
+      .navbarTransicion{
+        @include transicionScale(1.1);
+      }
+    }
+     
   }
   
-  ul {
-      list-style-type: none; /*le saca todos los estilos por defecto y lo deja plano*/ 
-  }
-
-  a {
-      text-decoration: none; /*para sacar el subrayado del enlace*/
-      color: white;
-  }
 }
 
 // MAIN
@@ -156,8 +171,7 @@ footer {
   // TRANSICIÓN REDES
   a:hover{
     .redesTransicion{
-      transition: all 0.2s ease-in-out;
-      transform: scale(1.5);
+      @include transicionScale(1.5);
     }
   }
   
